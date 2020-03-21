@@ -1,5 +1,3 @@
-// use std::num::Float;
-
 
 pub struct Vec3 {
     e0: f32,
@@ -30,8 +28,8 @@ impl Vec3 {
     pub fn b(&self) -> f32 {
         self.e2
     }
-    pub fn to_rgb(&self) -> [u8;3] {
-        [(self.e0 * 255.0) as u8, (self.e1 * 255.0) as u8, (self.e2 * 255.0) as u8]
+    pub fn to_rgb(&self) -> [u8; 3] {
+        [(self.e0 * 255.99) as u8, (self.e1 * 255.99) as u8, (self.e2 * 255.99) as u8]
     }
 
     pub fn neg(&self) -> Vec3 {
