@@ -41,15 +41,15 @@ impl Vec3 {
         }
     }
 
-    pub fn add_vec3(&self, other: Vec3) -> Vec3 {
+    pub fn add_vec3(&self, other: &Vec3) -> Vec3 {
         Vec3 { e0: self.e0 + other.e0, e1: self.e1 + other.e1, e2: self.e2 + other.e2 }
     }
 
-    pub fn subtract_vec3(&self, other: Vec3) -> Vec3 {
+    pub fn subtract_vec3(&self, other: &Vec3) -> Vec3 {
         Vec3 { e0: self.e0 - other.e0, e1: self.e1 - other.e1, e2: self.e2 - other.e2 }
     }
 
-    pub fn multiply_vec3(&self, other: Vec3) -> Vec3 {
+    pub fn multiply_vec3(&self, other: &Vec3) -> Vec3 {
         Vec3 { e0: self.e0 * other.e0, e1: self.e1 * other.e1, e2: self.e2 * other.e2 }
     }
 
@@ -59,6 +59,10 @@ impl Vec3 {
 
     pub fn length(&self) -> f32 {
         (self.e0 * self.e0 + self.e1 * self.e1 + self.e2 * self.e2).sqrt() as f32
+    }
+
+    pub fn dot(&self, other: &Vec3) -> f32 {
+        self.e0 * other.e0 + self.e1 * other.e1 + self.e2 * other.e2
     }
 
     pub fn unit_vector(&self) -> Vec3 {
